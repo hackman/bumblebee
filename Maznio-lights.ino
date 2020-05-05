@@ -1,6 +1,6 @@
 #include <avr/sleep.h>
 
-#define VERSION "0.3"
+#define VERSION "0.4"
 #define DEBUG
 #define INGEAR 11
 #define BREAKPEDAL 10
@@ -257,13 +257,6 @@ void stop_starter() {
 }
 
 void stop_car() {
-	// Do not stop already stopped car
-	if (!car_started) {
-#ifdef DEBUG
-		Serial.println("Car not started. Stop aborted");
-#endif
-		return;
-	}
 	if (acc) {
 		digitalWrite(ACC, LOW);
 		acc = false;
@@ -275,6 +268,7 @@ void stop_car() {
 		Serial.println("Engine already OFF");
 #endif
 	}
+
 	car_started = false;
 	turn_lights_off = true;
 	delay(1500);
