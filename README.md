@@ -1,4 +1,4 @@
-The bumblebee project is a controller for automating the control of the lights of a car
+The bumblebee project is a controller for automating the control of the lights(daylights, low and high beams) of a car
 and also implementing start/stop functionality with a button.
 
 Currently the crank time is hardcoded, it may be possible to be replaced by constant
